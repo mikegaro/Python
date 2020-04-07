@@ -14,7 +14,7 @@ http_method = "GET"
 request_path = "/v3/balance/"
 
  # nonce genera un numero unico y siempre creciente
- # basado en el tiempo necesario para cada vez que
+ # basado en el tiempo, necesario para cada vez que
 # llamamos a la API.
 nonce = str(int(round(time.time() * 1000)))
 message = nonce+http_method+request_path
@@ -28,6 +28,11 @@ signature = hmac.new(bitso_secret.encode('utf-8'),
 auth_header = 'Bitso %s:%s:%s' % (bitso_key,nonce,signature)
 
 response = requests.get('https://api.bitso.com' + request_path, headers={"Authorization": auth_header})
-respone_json = response.json()
+response_json = response.json()
 
-print response_json['success']
+print("\n\tMis balances:")
+
+for i in range(0,12):
+    total = response_json['payload']['balances'][i]['total']
+    if float(total) != 0:
+        print("\n\t" + response_json['payload']['balances'][i]['currency'] + ": " + total)
