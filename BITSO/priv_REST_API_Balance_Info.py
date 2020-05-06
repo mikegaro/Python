@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import requests
 import sys
 import time
 import hmac
@@ -37,7 +36,7 @@ def post_request(parametros):
     signature = hmac.new(bitso_secret.encode('utf-8'),message.encode('utf-8'),hashlib.sha256).hexdigest()
     auth_header = 'Bitso %s:%s:%s' % (bitso_key,nonce,signature)
     respuesta = requests.post("https://api.bitso.com" + request_path, json = parametros, headers={"Authorization": auth_header})
-    return 0
+    return respuesta
 
 def balance_btc():
     request = get_request()

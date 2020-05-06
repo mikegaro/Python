@@ -34,5 +34,5 @@ print(floor(mi_numero))
 print(ceil(mi_numero))
 print(sqrt(36))
 
-nombre_ingresado = raw_input("Ingresa tu nombre: ")
+nombre_ingresado = input("Ingresa tu nombre: ")
 print("Hola" + nombre_ingresado + "!")
