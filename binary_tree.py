@@ -19,7 +19,7 @@ def display(tree): #In Order traversal of the tree
 
     return
 
-def depth_of_tree(tree): #This is the recursive function to find the depth of binary tree.
+def depth_of_tree(tree):  #This is the recursive function to find the depth of binary tree.
     if tree is None:
         return 0
     else:
