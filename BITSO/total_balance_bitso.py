@@ -28,3 +28,4 @@ while True:
     print("\t$" + str(round(balance_actual(), 2))+ " mxn" +
           "\tBTC: $" + str(btc.ultimo_precio_ask()) + " mxn\n")
     t.sleep(10)
+    
