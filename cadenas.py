@@ -18,12 +18,10 @@ for i in range(0,len(phrase)):
 print(phrase.index("a"))
 print(phrase.replace("Girafa","Zebra"))
 print(phrase)
-
 print("\n\n\n")
 print(3 +4*5)
-
 mi_numero = -5.35
-
+asdf
 print(mi_numero)
 print(abs(mi_numero))
 print(pow(mi_numero,2))
