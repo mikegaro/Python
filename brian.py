@@ -1,2 +1,2 @@
 #!/usr/bin/python
-print('The bright side ' + 'of Life...')
+print('The bright side ' + 'of TUJETA...')
