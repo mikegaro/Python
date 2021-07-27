@@ -3,6 +3,12 @@ class User:
     active_users=0  # ESTE ES EL ATRIBUTO DE LA CLASE Y ES UNIVERSAL NO IMPORTA LAS INSTANCIAS QUE SE CREE
                     # ESTE ATRIBUTO ES UNICO Y EXCLUSIVO DE LA CLASE
 
+
+    @classmethod #METODOS EXCLUSIVOS DE LA CLASE, NO DE LA INSTANCIA
+    def display_usuarios_activos(cls):
+        print(cls)
+        return f"Hay {cls.active_users} usuarios activos"
+
     def __init__(self, nombre, apellido):
         # self se refiere a la instancia en especifico
         self.name = nombre
@@ -27,3 +33,11 @@ user = User("Miguel", "Oñate")
 user_dos = User("Fernanda", "Garcia")
 
 user_dos.borrarUsuario()
+
+print(User.display_usuarios_activos())
+
+user_tres = User("Fernanda", "Oñate")
+
+user_cuatro = User("Miguel", "Elchido")
+
+print(User.display_usuarios_activos())

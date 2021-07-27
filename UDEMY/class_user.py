@@ -1,4 +1,5 @@
 class User:
+
     def __init__(self, nombre, apellido):
         # self se refiere a la instancia en especifico
         print("A new user has been created")
