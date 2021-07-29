@@ -9,6 +9,11 @@ class User:
         print(cls)
         return f"Hay {cls.active_users} usuarios activos"
 
+    @classmethod
+    def from_string(cls, data):#METODOS EXLCUSIVOS DE LA CLASE, NO DE LA INSTANCIA
+        first,last = data.split(",")
+        return cls(first, last) #cls refiere a la clase, es decir, nos regresa una instancia
+
     def __init__(self, nombre, apellido):
         # self se refiere a la instancia en especifico
         self.name = nombre
@@ -16,6 +21,9 @@ class User:
         User.active_users+=1
         print(f"{self.name} ha sido creado")
         print(f"\nHasta el momento hay {str(User.active_users)} usuarios activos\n")
+
+    def __repr__(self):
+        return f"Esta instancia es {self.name}"
 
     def cambiarNombre(self, nombre):
         self.name = nombre
@@ -41,3 +49,13 @@ user_tres = User("Fernanda", "Oñate")
 user_cuatro = User("Miguel", "Elchido")
 
 print(User.display_usuarios_activos())
+
+user_cinco = User.from_string("Miguel,Onate")
+
+print(User.display_usuarios_activos())
+
+
+#ESTO ES LO QUE PASA SI ESTABLECEMOS EL METODO __repr__
+j = User("Luis Miguel", "jeje")
+print(j) # En lugar de que nos aparezca "<__main__.User at 0x129347>" 
+         # nos aparece algo personalizado
