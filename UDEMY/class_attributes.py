@@ -59,3 +59,17 @@ print(User.display_usuarios_activos())
 j = User("Luis Miguel", "jeje")
 print(j) # En lugar de que nos aparezca "<__main__.User at 0x129347>" 
          # nos aparece algo personalizado
+
+
+class Moderador(User):
+    def __init__(self, nombre, apellido, community):
+        super().__init__(nombre, apellido)
+        self.community = community
+
+    def remove_post(self):
+        return f"{self.full_name()} removed a post from the {self.community} community"
+
+pepe = Moderador("PEPE", "FLORES", "Ingenierios UNAM")
+
+print(pepe.imprimirNombre())
+print(pepe.community)
